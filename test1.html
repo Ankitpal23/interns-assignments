@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: silver;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form id="emailForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="semester">Semester:</label>
+    <input type="text" id="semester" name="semester" required>
+
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" name="branch" required>
+
+    <label for="rollNumber">Roll Number:</label>
+    <input type="text" id="rollNumber" name="rollNumber" required>
+
+    <label for="attachment">Image Attachment (PNG, JPG, JPEG only):</label>
+    <input type="file" id="attachment" name="attachment" accept=".png, .jpg, .jpeg" required>
+
+    <button type="button" onclick="sendEmail()">Send Email</button>
+</form>
+
+<script>
+    function sendEmail() {
+        // Collect form data
+        const name = document.getElementById('name').value;
+        const semester = document.getElementById('semester').value;
+        const branch = document.getElementById('branch').value;
+        const rollNumber = document.getElementById('rollNumber').value;
+        const attachment = document.getElementById('attachment').files[0];
+
+        // You would typically send this data to a server-side script using AJAX or Fetch
+        // For simplicity, we're just logging the data here
+        console.log('Name:', name);
+        console.log('Semester:', semester);
+        console.log('Branch:', branch);
+        console.log('Roll Number:', rollNumber);
+        console.log('Attachment:', attachment);
+
+        // You would perform the email sending logic on the server-side
+    }
+</script>
+
+</body>
+</html>
